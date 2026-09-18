@@ -39,7 +39,7 @@ name:      Soumirya Sarangi
 role:      AI/ML Engineer  ·  Full-Stack Developer
 education: B.Tech CSE @ Lovely Professional University  ·  CGPA 8.4
 based_in:  Phagwara, Punjab, India
-domain:    computer vision on satellite SAR imagery
+focus:     LLM-powered product surfaces in Next.js
 stack:     PyTorch · Python · Next.js · TypeScript
 ```
 
