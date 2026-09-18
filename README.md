@@ -1,6 +1,6 @@
 <!--
   ══════════════════════════════════════════════════════════════
-   SOUMIRYA SARANGI — PROFILE README  ·  v2
+   SOUMIRYA SARANGI — PROFILE README  ·  v3
    Repo: github.com/SoumiryaSarangi/SoumiryaSarangi
 
    Palette (keep consistent if you edit):
@@ -9,7 +9,7 @@
    WIDGET POLICY: every image here renders without burning a
    shared GitHub API token. The API-backed cards (stats,
    top-langs, activity graph) sit in a commented block in
-   section 04 — uncomment them AFTER you deploy your own
+   section 05 — uncomment them AFTER you deploy your own
    instance.
   ══════════════════════════════════════════════════════════════
 -->
@@ -32,43 +32,44 @@
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
 
-## `01` &nbsp;·&nbsp; Who's typing
+## `01` &nbsp;·&nbsp; Overview
 
 ```yaml
 name:      Soumirya Sarangi
 role:      AI/ML Engineer  ·  Full-Stack Developer
 education: B.Tech CSE @ Lovely Professional University  ·  CGPA 8.4
 based_in:  Phagwara, Punjab, India
-building:  computer vision pipelines for satellite SAR imagery
-shipping:  LLM-powered study tooling in Next.js
-reading:   segmentation papers, and my own confusion matrices
+domain:    computer vision on satellite SAR imagery
+stack:     PyTorch · Python · Next.js · TypeScript
 ```
 
-Most machine learning projects die in a notebook. I'm more interested in the part after that — the evaluation that holds up, the schema contract between pipeline stages, the interface a real person actually clicks.
+I build machine learning systems end to end — the model, the evaluation harness that decides whether the model is any good, and the product surface that puts it in front of a user.
 
-So I work both ends. On one side: gated CNN→U-Net detectors, per-scene normalization, scene-level splits, thresholds picked on validation and never touched again. On the other: Next.js 15, TypeScript, offline-first storage, auth flows, deploys that stay up.
+Most of my recent work sits in remote sensing, where the imagery is single-channel, speckled, and nothing like the natural-image datasets standard architectures are tuned for. That constraint has shaped how I approach the rest of it: establish a classical baseline before reaching for a network, measure against a holdout that was sealed before training started, and treat the interface between pipeline stages as a contract rather than an assumption.
+
+The other half of my time goes into full-stack product work — Next.js applications with real auth, offline-capable storage, and deploys that stay up without supervision.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-**Where I'm strongest**
+**Areas of focus**
 
-`Computer vision` — segmentation and classification on noisy, non-RGB imagery, where the usual ImageNet intuitions stop working.
+**Computer vision** — semantic segmentation and scene classification on non-RGB, low-SNR imagery.
 
-`Classical ML` — HOG, TF-IDF, SVMs, RandomForests. Cheap, interpretable, and frequently good enough. Knowing when to reach for them is half the job.
+**Classical machine learning** — feature engineering with HOG and TF-IDF, SVMs, ensemble methods. Often the correct answer, and always the right baseline.
 
-`Product engineering` — the model is 20% of the work. I build the other 80%.
+**Applied full-stack** — the model is a component. I build the system it lives inside.
 
 </td>
 <td width="50%" valign="top">
 
-**Receipts**
+**Background**
 
 | | |
 |:--|:--|
-| 🏆 | Top 10 of 50+ teams — college hackathon |
 | 🛰️ | Smart India Hackathon 2026 |
+| 🏆 | Top 10 of 50+ teams, college hackathon |
 | 📜 | Data Science & ML with GenAI — Cipher School |
 | 🧪 | Software Testing — NPTEL |
 | 💾 | DBMS & C++ — Infosys Springboard |
@@ -80,7 +81,136 @@ So I work both ends. On one side: gated CNN→U-Net detectors, per-scene normali
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
 
-## `02` &nbsp;·&nbsp; Toolkit
+## `02` &nbsp;·&nbsp; How I work
+
+A model that reports 94% accuracy and a model that *has* 94% accuracy are different objects, and the difference is entirely in how the number was produced. These are the practices I hold to, and most of them exist because I have been burned by the alternative.
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**Baseline before architecture**
+
+A classical method goes in first — thresholding, hand-built features, a linear model. Without it there is no way to know whether a network is contributing anything beyond parameter count.
+
+</td>
+<td width="33%" valign="top">
+
+**Evaluation before optimisation**
+
+Splits at the scene level, never the tile level, so that neighbouring crops cannot leak across the boundary. Thresholds chosen on validation and frozen. The holdout stays sealed until the run is finished.
+
+</td>
+<td width="33%" valign="top">
+
+**Contracts between stages**
+
+Pipeline stages communicate through schema-validated files, not shared imports. Each stage can be rewritten, or handed to someone else, without touching the ones around it.
+
+</td>
+</tr>
+<tr>
+<td width="33%" valign="top">
+
+**Failure modes over headline metrics**
+
+An aggregate score hides the cases that matter. I spend more time on the confusion matrix and on the specific inputs a model gets wrong than on the summary number.
+
+</td>
+<td width="33%" valign="top">
+
+**Interpretability where it is cheap**
+
+If a feature-based model gets within a few points of a network, the feature-based model usually wins — it can be debugged, explained, and defended.
+
+</td>
+<td width="33%" valign="top">
+
+**Ship the whole thing**
+
+A result in a notebook is not a deliverable. I take projects through to a deployed interface, because the last 20% is where most of the real problems surface.
+
+</td>
+</tr>
+</table>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
+
+## `03` &nbsp;·&nbsp; Selected work
+
+### 🛰️ &nbsp; UDGAM — Oil Spill Detection & Vessel Attribution from Sentinel-1 SAR
+
+<img src="https://img.shields.io/badge/Smart%20India%20Hackathon%202026-00D9FF?style=flat-square&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/PyTorch%202.6-0A3D62?style=flat-square&logo=pytorch&logoColor=00D9FF&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/Python%203.13-0A3D62?style=flat-square&logo=python&logoColor=00D9FF&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/private%20repository-0A3D62?style=flat-square&labelColor=0D1117" />
+
+> **Problem** — Synthetic aperture radar can see oil slicks through cloud and darkness, which makes it the only practical sensor for continuous maritime monitoring. It also renders wind shadows, biogenic slicks and low-wind zones as dark patches that look almost identical to oil. A segmenter trained on spill imagery will confidently outline all of them.
+
+> **Approach** — I own the detection stage of a three-stage pipeline (detect → backward drift to origin → vessel attribution). Rather than asking one network to both find and disambiguate, I built a gated two-network detector: a CNN scene classifier decides whether a scene plausibly contains oil at all, and only then does a U-Net segmenter run. Trained on a 2,570-scene corpus with per-scene MAD normalisation and scene-level splits.
+
+> **Result** — 0.942 scene-classification accuracy and 0.757 pooled oil-class IoU against a 0.689 classical baseline, measured on a 450-scene holdout sealed before training. The gate lifted look-alike rejection from 0.08 to 0.84 at equal IoU — the clearest evidence that the architectural decision, not the extra capacity, was doing the work. Against SkyTruth Cerulean on real incidents, median agreement was 0.553 IoU.
+
+<sub>Also built the classical CV path behind the live demo — dark-spot thresholding, a 10-feature RandomForest, and a land-masked ship-contact detector that cut false contacts from 142 to 110 — emitting schema-validated GeoJSON for the downstream stages.</sub>
+
+<sub>`PyTorch` · `CUDA 12.4` · `rasterio` · `OpenCV` · `scikit-image` · `Shapely` · `Google Earth Engine`</sub>
+
+<br />
+
+### 🎓 &nbsp; SenseiAI — AI Study Platform
+
+<a href="https://exam-prep-ai-ebon.vercel.app"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
+<a href="https://github.com/SoumiryaSarangi/ExamPrep-AI"><img src="https://img.shields.io/badge/source-0A3D62?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117" /></a>
+<img src="https://img.shields.io/github/stars/SoumiryaSarangi/ExamPrep-AI?style=flat-square&labelColor=0D1117&color=0A3D62" />
+<img src="https://img.shields.io/github/last-commit/SoumiryaSarangi/ExamPrep-AI?style=flat-square&labelColor=0D1117&color=0A3D62" />
+
+> **Problem** — Students receive lecture material as slides and get no structure on top of it. The tools that promise to fix this require an account, an API key, and permission to upload coursework to someone else's server — which is enough friction that most people give up before the first session.
+
+> **Approach** — A Next.js 15 application that ingests PDF and PPTX slides and generates structured notes, flashcards, quizzes and timed exam simulations through LLaMA 3.3 70B on Groq. Flashcards run on SM-2 spaced repetition. A per-topic weak-area tracker reads quiz history and assembles the next practice set from the topics the user is actually failing. The architecture is local-first: all user data lives in IndexedDB via Dexie, Supabase auth is optional, and a demo mode works with no API key at all.
+
+> **Result** — A deployed, working product that needs no signup to try. The offline-first decision turned out to matter more than any model choice — it removed the entire onboarding barrier and made the tool usable on unreliable campus networks.
+
+<sub>`Next.js 15 (App Router)` · `TypeScript` · `Radix UI / shadcn` · `Zustand` · `Dexie` · `PDF.js` · `Supabase`</sub>
+
+<br />
+
+### 🤖 &nbsp; ML Educational Chatbot
+
+<a href="https://github.com/SoumiryaSarangi/ml-educational-chatbot"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
+<img src="https://img.shields.io/github/stars/SoumiryaSarangi/ml-educational-chatbot?style=flat-square&labelColor=0D1117&color=0A3D62" />
+<img src="https://img.shields.io/github/languages/top/SoumiryaSarangi/ml-educational-chatbot?style=flat-square&labelColor=0D1117&color=0A3D62" />
+
+> **Problem** — Conversational Q&A has become synonymous with calling a large language model, which makes it easy to forget where the genuine difficulty lies. For a narrow, well-bounded domain, it is not obvious that an LLM is required at all — but almost nobody checks.
+
+> **Approach** — A domain-restricted assistant for AI, ML and data science questions, built with no LLM anywhere in the stack. TF-IDF vectorisation feeds a Naive Bayes intent classifier; responses are retrieved by cosine similarity over a curated knowledge base; the interface runs on Dash.
+
+> **Result** — Within its domain the system answers reliably, responds in milliseconds, runs on CPU, costs nothing per query, and every decision it makes can be traced to a specific feature weight. It also fails cleanly and visibly outside its domain, which is arguably a feature. A useful calibration of what the classical toolbox still covers.
+
+<sub>`Python` · `scikit-learn` · `Dash` · `NumPy`</sub>
+
+<br />
+
+### 👕 &nbsp; Fashion-MNIST Classifier — HOG + Linear SVM
+
+<a href="https://github.com/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
+<img src="https://img.shields.io/github/stars/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm?style=flat-square&labelColor=0D1117&color=0A3D62" />
+<img src="https://img.shields.io/github/languages/top/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm?style=flat-square&labelColor=0D1117&color=0A3D62" />
+
+> **Problem** — Fashion-MNIST is usually approached as a CNN exercise. The more instructive question is how much of the accuracy comes from learned features versus from the classifier on top of them — and how good a well-chosen hand-built descriptor still is.
+
+> **Approach** — A modular scikit-learn pipeline: HOG descriptors into a linear SVM, with each stage independently swappable. Feature extraction and fitted models are cached to disk, so re-running an experiment costs seconds rather than minutes. Evaluation produces per-class precision, recall and a full confusion matrix rather than a single accuracy figure.
+
+> **Result** — 89.2% test accuracy with no neural network and no GPU. The per-class breakdown localises nearly all remaining error to the shirt/coat/pullover cluster, which is exactly where texture-based descriptors would be expected to struggle — a result that explains itself instead of requiring interpretation.
+
+<sub>`Python` · `scikit-learn` · `scikit-image` · `NumPy` · `Matplotlib`</sub>
+
+<br />
+
+<sub>Further work — including a mobile-first [meat freshness analyser](https://github.com/SoumiryaSarangi/Meat-freshness-analyzer) and an [interactive OS deadlock detection tool](https://github.com/SoumiryaSarangi/OS-CA-Automated-Deadlock-Detection-Tool) — is in the <a href="https://github.com/SoumiryaSarangi?tab=repositories">repositories tab</a>.</sub>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
+
+## `04` &nbsp;·&nbsp; Toolkit
 
 <div align="center">
 
@@ -102,7 +232,7 @@ So I work both ends. On one side: gated CNN→U-Net detectors, per-scene normali
 
 <img src="https://skillicons.dev/icons?i=nextjs,react,nodejs,tailwind,html,css&theme=dark" alt="Web" />
 
-<sub>**DATA, INFRA & TOOLING**</sub>
+<sub>**DATA, INFRASTRUCTURE & TOOLING**</sub>
 
 <img src="https://skillicons.dev/icons?i=mysql,postgres,supabase,git,github,vercel,linux,vscode&theme=dark" alt="Tools" />
 
@@ -110,108 +240,7 @@ So I work both ends. On one side: gated CNN→U-Net detectors, per-scene normali
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
 
-## `03` &nbsp;·&nbsp; Selected work
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🛰️ UDGAM
-
-<img src="https://img.shields.io/badge/SIH%202026-00D9FF?style=flat-square&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/PyTorch-0A3D62?style=flat-square&logo=pytorch&logoColor=00D9FF&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/private-0A3D62?style=flat-square&labelColor=0D1117" />
-
-Oil spill detection and vessel attribution from Sentinel-1 SAR. I own the detection stage: a CNN scene classifier gating a U-Net segmenter, trained on 2,570 scenes.
-
-**0.942** scene accuracy · **0.757** pooled oil IoU on a sealed holdout · look-alike rejection **0.08 → 0.84**
-
-The gate is the interesting part. Segmenters hallucinate on wind shadows and algal slicks; a classifier in front of one doesn't.
-
-</td>
-<td width="50%" valign="top">
-
-### 🎓 SenseiAI
-
-<a href="https://exam-prep-ai-ebon.vercel.app"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
-<img src="https://img.shields.io/github/stars/SoumiryaSarangi/ExamPrep-AI?style=flat-square&labelColor=0D1117&color=0A3D62" />
-<img src="https://img.shields.io/github/last-commit/SoumiryaSarangi/ExamPrep-AI?style=flat-square&labelColor=0D1117&color=0A3D62" />
-
-Drop in a lecture PDF, get back structured notes, flashcards, quizzes and a timed exam simulation. LLaMA 3.3 70B via Groq.
-
-SM-2 spaced repetition plus a weak-area tracker that reads your quiz history and builds the next practice set for you.
-
-Runs entirely local on IndexedDB — optional Supabase auth, demo mode with no API key at all.
-
-`Next.js 15` `TypeScript` `Zustand` `Dexie`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### 🥩 Meat Freshness Analyzer
-
-<a href="https://marbl-app.onrender.com"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
-<img src="https://img.shields.io/github/stars/SoumiryaSarangi/Meat-freshness-analyzer?style=flat-square&labelColor=0D1117&color=0A3D62" />
-<img src="https://img.shields.io/github/languages/top/SoumiryaSarangi/Meat-freshness-analyzer?style=flat-square&labelColor=0D1117&color=0A3D62" />
-
-Point a phone camera at a cut of meat, get back a freshness classification and a size-based routing decision. Mobile-first, because the people who'd actually use this aren't sitting at a desk.
-
-`Python` `Computer Vision`
-
-</td>
-<td width="50%" valign="top">
-
-### 🤖 ML Educational Chatbot
-
-<a href="https://github.com/SoumiryaSarangi/ml-educational-chatbot"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&labelColor=0D1117" /></a>
-<img src="https://img.shields.io/github/stars/SoumiryaSarangi/ml-educational-chatbot?style=flat-square&labelColor=0D1117&color=0A3D62" />
-<img src="https://img.shields.io/github/last-commit/SoumiryaSarangi/ml-educational-chatbot?style=flat-square&labelColor=0D1117&color=0A3D62" />
-
-A domain-specific Q&A bot for AI/ML topics: TF-IDF intent classification, Naive Bayes, cosine-similarity retrieval, Dash front end.
-
-Deliberately **zero LLMs**. Built to find out how far the pre-2017 toolbox actually gets you. Further than people assume.
-
-`Python` `scikit-learn` `Dash`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### 👕 Fashion-MNIST · HOG + SVM
-
-<a href="https://github.com/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&labelColor=0D1117" /></a>
-<img src="https://img.shields.io/github/stars/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm?style=flat-square&labelColor=0D1117&color=0A3D62" />
-
-**89.2%** test accuracy with no neural network in sight. Modular scikit-learn pipeline — HOG descriptors into a linear SVM, with feature and model caching so re-runs are instant.
-
-Interactive CLI, full evaluation reporting, per-class breakdowns.
-
-`Python` `scikit-learn` `scikit-image`
-
-</td>
-<td width="50%" valign="top">
-
-### 🔒 OS Deadlock Detection Tool
-
-<a href="https://github.com/SoumiryaSarangi/OS-CA-Automated-Deadlock-Detection-Tool"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&labelColor=0D1117" /></a>
-<img src="https://img.shields.io/github/stars/SoumiryaSarangi/OS-CA-Automated-Deadlock-Detection-Tool?style=flat-square&labelColor=0D1117&color=0A3D62" />
-
-Matrix-based and Wait-For Graph deadlock detection, visualized step by step so you can watch the algorithm reduce the graph instead of taking the textbook's word for it.
-
-`JavaScript` `Algorithms` `Visualization`
-
-</td>
-</tr>
-</table>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
-
-## `04` &nbsp;·&nbsp; Activity
+## `05` &nbsp;·&nbsp; Activity
 
 <div align="center">
 
@@ -258,13 +287,13 @@ Matrix-based and Wait-For Graph deadlock detection, visualized step by step so y
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
 
-## `05` &nbsp;·&nbsp; Open to
+## `06` &nbsp;·&nbsp; Contact
 
 <div align="center">
 
-**Internships · research collaborations · anything hard in computer vision or applied ML**
+**Open to internships and research collaborations in computer vision, remote sensing, and applied machine learning.**
 
-If you're working on geospatial AI, remote sensing, or you just think classical ML is underrated — I'd like to hear from you.
+If you are working on something in geospatial AI — or you have a problem where the classical approach deserves a fair trial before the network — I would be glad to hear about it.
 
 <br />
 
