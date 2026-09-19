@@ -24,8 +24,7 @@
 </div>
 
 <img src="assets/divider.svg" width="100%" alt="" />
-
-## `01` &nbsp;·&nbsp; Overview
+## `01` &nbsp;·&nbsp; About
 
 ```yaml
 name:      Soumirya Sarangi
@@ -35,100 +34,11 @@ domain:    computer vision on satellite SAR imagery
 stack:     PyTorch · Python · Next.js · TypeScript
 ```
 
-I build machine learning systems end to end — the model, the evaluation harness that decides whether the model is any good, and the product surface that puts it in front of a user.
-
-Most of my recent work sits in remote sensing, where imagery is single-channel, speckled, and nothing like the natural-image datasets standard architectures are tuned for. That constraint shaped the rest of how I work: establish a classical baseline before reaching for a network, measure against a holdout sealed before training started, and treat the interface between pipeline stages as a contract rather than an assumption.
-
-The other half of my time goes into full-stack product work — Next.js applications with real auth, offline-capable storage, and deploys that stay up without supervision.
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-**Areas of focus**
-
-**Computer vision** — semantic segmentation and scene classification on non-RGB, low-SNR imagery.
-
-**Classical machine learning** — feature engineering with HOG and TF-IDF, SVMs, ensemble methods. Often the correct answer, and always the right baseline.
-
-**Applied full-stack** — the model is a component. I build the system it lives inside.
-
-</td>
-<td width="50%" valign="top">
-
-**Background**
-
-| | |
-|:--|:--|
-| 🛰️ | Smart India Hackathon 2026 |
-| 🏆 | Top 10 of 50+ teams, college hackathon |
-| 📜 | Data Science & ML with GenAI — Cipher School |
-| 🧪 | Software Testing — NPTEL |
-| 💾 | DBMS & C++ — Infosys Springboard |
-| 🐙 | Pull Shark |
-
-</td>
-</tr>
-</table>
+I build machine learning systems end to end — the model, the evaluation that decides whether it is any good, and the product surface that puts it in front of a user. Most of my recent work is in remote sensing, on imagery that looks nothing like the natural-image datasets standard architectures are tuned for.
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
-## `02` &nbsp;·&nbsp; How I work
-
-A model that reports 94% accuracy and a model that *has* 94% accuracy are different objects, and the difference is entirely in how the number was produced. These are the practices I hold to, and most of them exist because I have been burned by the alternative.
-
-<table>
-<tr>
-<td width="33%" valign="top">
-
-**Baseline before architecture**
-
-A classical method goes in first — thresholding, hand-built features, a linear model. Without it there is no way to know whether a network is contributing anything beyond parameter count.
-
-</td>
-<td width="33%" valign="top">
-
-**Evaluation before optimisation**
-
-Splits at the scene level, never the tile level, so neighbouring crops cannot leak across the boundary. Thresholds chosen on validation and frozen. The holdout stays sealed until the run is finished.
-
-</td>
-<td width="33%" valign="top">
-
-**Contracts between stages**
-
-Pipeline stages communicate through schema-validated files, not shared imports. Each stage can be rewritten, or handed to someone else, without touching the ones around it.
-
-</td>
-</tr>
-<tr>
-<td width="33%" valign="top">
-
-**Failure modes over headline metrics**
-
-An aggregate score hides the cases that matter. I spend more time on the confusion matrix and on the specific inputs a model gets wrong than on the summary number.
-
-</td>
-<td width="33%" valign="top">
-
-**Interpretability where it is cheap**
-
-If a feature-based model gets within a few points of a network, the feature-based model usually wins — it can be debugged, explained, and defended.
-
-</td>
-<td width="33%" valign="top">
-
-**Ship the whole thing**
-
-A result in a notebook is not a deliverable. I take projects through to a deployed interface, because the last 20% is where most of the real problems surface.
-
-</td>
-</tr>
-</table>
-
-<img src="assets/divider.svg" width="100%" alt="" />
-
-## `03` &nbsp;·&nbsp; Selected work
+## `02` &nbsp;·&nbsp; Selected work
 
 <table>
 <tr>
@@ -142,11 +52,11 @@ A result in a notebook is not a deliverable. I take projects through to a deploy
 
 *SAR sees through cloud and darkness — but renders wind shadows and algal slicks almost identically to oil.*
 
-Detection stage of a three-part pipeline for maritime oil spill monitoring. Rather than asking one network to find and disambiguate at once, I gated a U-Net segmenter behind a CNN scene classifier, trained on 2,570 Sentinel-1 scenes with per-scene normalisation and scene-level splits.
+Detection stage of a maritime oil spill pipeline. I gated a U-Net segmenter behind a CNN scene classifier, trained on 2,570 Sentinel-1 scenes.
 
-**0.942** scene accuracy · **0.757** pooled IoU on a sealed holdout · look-alike rejection **0.08 → 0.84**, which isolates the gain to the architecture rather than the added capacity.
+**0.942** scene accuracy · **0.757** pooled IoU on a sealed holdout · look-alike rejection **0.08 → 0.84**
 
-<sub>`PyTorch` · `rasterio` · `OpenCV` · `scikit-image` · `Earth Engine`</sub>
+<sub>`PyTorch` · `rasterio` · `OpenCV` · `Earth Engine`</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -159,11 +69,11 @@ Detection stage of a three-part pipeline for maritime oil spill monitoring. Rath
 
 *Study tools demand an account and an API key before the first session — enough friction that most students never reach it.*
 
-Next.js 15 platform that turns lecture PDFs and slide decks into structured notes, flashcards, quizzes and timed exams via LLaMA 3.3 70B on Groq. SM-2 spaced repetition, plus a weak-area tracker that reads quiz history and assembles the next practice set from what the user is actually failing.
+Turns lecture PDFs into notes, flashcards, quizzes and timed exams via LLaMA 3.3 70B on Groq. SM-2 spaced repetition and a weak-area tracker that builds practice sets from what you are failing.
 
-Local-first on IndexedDB: optional auth, demo mode with no key at all. Removing onboarding mattered more than any model choice.
+Local-first on IndexedDB — demo mode needs no key at all.
 
-<sub>`Next.js 15` · `TypeScript` · `Zustand` · `Dexie` · `Supabase`</sub>
+<sub>`Next.js 15` · `TypeScript` · `Zustand` · `Dexie`</sub>
 
 </td>
 </tr>
@@ -177,13 +87,13 @@ Local-first on IndexedDB: optional auth, demo mode with no key at all. Removing 
 <img src="https://img.shields.io/badge/FastAPI-0A3D62?style=flat-square&logo=fastapi&logoColor=00D9FF&labelColor=0D1117" />
 <img src="https://img.shields.io/badge/real--time%20CV-0A3D62?style=flat-square&labelColor=0D1117" />
 
-*Screen locks are binary and badly timed: they fire while you are still sitting there, and stay open after you walk away.*
+*Screen locks fire while you are still sitting there, and stay open after you walk away.*
 
-Physical zero-trust workstation guard. BlazeFace/SSD detection through MediaPipe establishes presence, Bluetooth proximity tethering confirms it, and a three-state machine escalates between them instead of flipping a single boolean.
+Physical zero-trust workstation guard. MediaPipe face detection establishes presence, Bluetooth proximity confirms it, and a three-state machine escalates between them instead of flipping a boolean.
 
-FastAPI backend streaming over WebSockets to a Next.js 14 front end, with a K-Means "Chameleon UI" that recolours itself from the live camera frame.
+FastAPI streaming over WebSockets to a Next.js front end.
 
-<sub>`Python` · `FastAPI` · `MediaPipe` · `WebSockets` · `Next.js 14`</sub>
+<sub>`Python` · `FastAPI` · `MediaPipe` · `WebSockets`</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -196,11 +106,11 @@ FastAPI backend streaming over WebSockets to a Next.js 14 front end, with a K-Me
 
 *Conversational Q&A has become synonymous with calling an LLM. For a narrow domain it may not be necessary — but almost nobody checks.*
 
-A domain-restricted assistant for AI, ML and data science questions, built with no language model anywhere in the stack. TF-IDF vectorisation into a Naive Bayes intent classifier, responses retrieved by cosine similarity over a curated knowledge base, served through Dash.
+TF-IDF into a Naive Bayes intent classifier, responses retrieved by cosine similarity over a curated knowledge base, served through Dash.
 
-Millisecond responses on CPU, zero cost per query, and every decision traceable to a feature weight. It also fails visibly outside its domain — arguably a feature.
+Millisecond responses on CPU, zero cost per query, every decision traceable to a feature weight.
 
-<sub>`Python` · `scikit-learn` · `Dash` · `NumPy`</sub>
+<sub>`Python` · `scikit-learn` · `Dash`</sub>
 
 </td>
 </tr>
@@ -213,13 +123,13 @@ Millisecond responses on CPU, zero cost per query, and every decision traceable 
 <a href="https://github.com/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
 <img src="https://img.shields.io/badge/89.2%25%20accuracy-0A3D62?style=flat-square&labelColor=0D1117" />
 
-*Usually treated as a CNN exercise. The more useful question is how far a well-chosen hand-built descriptor still gets you.*
+*Usually treated as a CNN exercise. The more useful question is how far a hand-built descriptor still gets you.*
 
-Modular scikit-learn pipeline — HOG descriptors into a linear SVM, each stage independently swappable, with features and fitted models cached to disk so re-running an experiment costs seconds.
+HOG descriptors into a linear SVM, each stage swappable, features and models cached so re-runs cost seconds.
 
-**89.2%** test accuracy, no network and no GPU. Per-class evaluation localises nearly all residual error to the shirt/coat/pullover cluster, exactly where texture descriptors are expected to struggle — a result that explains itself.
+**89.2%** test accuracy, no network and no GPU. Per-class evaluation puts nearly all residual error in the shirt/coat/pullover cluster — exactly where texture descriptors should struggle.
 
-<sub>`Python` · `scikit-learn` · `scikit-image` · `Matplotlib`</sub>
+<sub>`Python` · `scikit-learn` · `scikit-image`</sub>
 
 </td>
 <td width="50%" valign="top">
@@ -230,11 +140,11 @@ Modular scikit-learn pipeline — HOG descriptors into a linear SVM, each stage 
 <a href="https://github.com/SoumiryaSarangi/Meat-freshness-analyzer"><img src="https://img.shields.io/badge/source-0A3D62?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117" /></a>
 <img src="https://img.shields.io/github/last-commit/SoumiryaSarangi/Meat-freshness-analyzer?style=flat-square&label=updated&labelColor=0D1117&color=0A3D62" />
 
-*Freshness assessment at point of sale is done by eye, inconsistently, by people with no time to be careful.*
+*Freshness at point of sale is judged by eye, inconsistently, by people with no time to be careful.*
 
-Camera-based classifier that grades a cut of meat for freshness and routes it by physical size, delivered as a mobile-first web app because the people who would use it are standing at a counter, not a desk.
+Camera-based classifier that grades a cut for freshness and routes it by physical size. Mobile-first, because the user is standing at a counter.
 
-The deployment constraint drove the modelling: everything had to run fast enough on a phone browser to be worth pulling out, which ruled out the heavier architectures early.
+The deployment constraint drove the modelling — everything had to run fast on a phone browser.
 
 <sub>`Python` · `OpenCV` · `scikit-learn` · `Flask`</sub>
 
@@ -242,7 +152,37 @@ The deployment constraint drove the modelling: everything had to run fast enough
 </tr>
 </table>
 
-<sub>Further work, including an <a href="https://github.com/SoumiryaSarangi/OS-CA-Automated-Deadlock-Detection-Tool">interactive OS deadlock detection tool</a> (matrix-based and Wait-For Graph, visualised step by step), is in the <a href="https://github.com/SoumiryaSarangi?tab=repositories">repositories tab</a>.</sub>
+<sub>Also: an <a href="https://github.com/SoumiryaSarangi/OS-CA-Automated-Deadlock-Detection-Tool">interactive OS deadlock detection tool</a> — matrix-based and Wait-For Graph, visualised step by step.</sub>
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
+## `03` &nbsp;·&nbsp; How I work
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**Baseline first**
+
+A classical method goes in before a network, so there is something to measure the network against.
+
+</td>
+<td width="33%" valign="top">
+
+**Honest splits**
+
+Splits at the scene level, thresholds fixed on validation, holdout opened once at the end.
+
+</td>
+<td width="33%" valign="top">
+
+**Ship it**
+
+A result in a notebook is not a deliverable. I take projects through to something deployed.
+
+</td>
+</tr>
+</table>
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
@@ -304,9 +244,6 @@ The deployment constraint drove the modelling: everything had to run fast enough
   │  3. Add env var  PAT_1 = a classic token, public_repo scope  │
   │  4. Replace YOUR-INSTANCE with your new Vercel domain        │
   │  5. Delete the two comment markers around this block         │
-  │                                                              │
-  │  Same procedure for the activity graph:                      │
-  │  github.com/Ashutosh00710/github-readme-activity-graph       │
   └──────────────────────────────────────────────────────────────┘
 
 <div align="center">
@@ -326,16 +263,10 @@ The deployment constraint drove the modelling: everything had to run fast enough
 
 **Open to internships and research collaborations in computer vision, remote sensing, and applied machine learning.**
 
-If you are working on something in geospatial AI — or you have a problem where the classical approach deserves a fair trial before the network — I would be glad to hear about it.
-
 <br />
 
 <a href="https://www.linkedin.com/in/soumirya-sarangi-262b38320/"><img src="https://img.shields.io/badge/Connect%20on%20LinkedIn-0A3D62?style=for-the-badge&logo=linkedin&logoColor=00D9FF" /></a>
 <a href="mailto:soumiryasarangi@gmail.com"><img src="https://img.shields.io/badge/soumiryasarangi%40gmail.com-0A3D62?style=for-the-badge&logo=gmail&logoColor=00D9FF" /></a>
-
-<br /><br />
-
-<sub><i>Evaluation discipline beats model complexity. Most of the time.</i></sub>
 
 </div>
 
