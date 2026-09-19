@@ -1,36 +1,29 @@
 <!--
   ══════════════════════════════════════════════════════════════
-   SOUMIRYA SARANGI — PROFILE README  ·  v3
+   SOUMIRYA SARANGI — PROFILE README  ·  v4
    Repo: github.com/SoumiryaSarangi/SoumiryaSarangi
 
-   Palette (keep consistent if you edit):
-     bg #0D1117 · accent #00D9FF · deep #0A3D62 · text #C9D1D9
+   This version uses BESPOKE SVG ASSETS in ./assets/.
+   Commit the assets/ folder alongside this file or the hero,
+   dividers and project icons will not render.
 
-   WIDGET POLICY: every image here renders without burning a
-   shared GitHub API token. The API-backed cards (stats,
-   top-langs, activity graph) sit in a commented block in
-   section 05 — uncomment them AFTER you deploy your own
-   instance.
+   Palette:  bg #0D1117 · accent #00D9FF · deep #0A3D62 · #C9D1D9
   ══════════════════════════════════════════════════════════════
 -->
 
+<img src="assets/header.svg" width="100%" alt="Soumirya Sarangi — AI/ML Engineer and Full-Stack Developer" />
+
 <div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,45:0A3D62,100:00D9FF&height=210&section=header&text=Soumirya%20Sarangi&fontSize=54&fontColor=FFFFFF&fontAlignY=36&animation=fadeIn&desc=AI%2FML%20Engineer%20%C2%B7%20Full-Stack%20Developer&descSize=18&descAlignY=56" alt="Soumirya Sarangi" />
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&duration=3200&pause=700&color=00D9FF&center=true&vCenter=true&width=780&lines=Deep+learning+on+satellite+imagery.;Full-stack+products+around+the+models.;PyTorch+%C2%B7+Next.js+%C2%B7+TypeScript+%C2%B7+Python;Models+that+survive+a+sealed+holdout." alt="Intro" />
-
-<br />
 
 <a href="https://www.linkedin.com/in/soumirya-sarangi-262b38320/"><img src="https://img.shields.io/badge/LinkedIn-0A3D62?style=for-the-badge&logo=linkedin&logoColor=00D9FF" alt="LinkedIn" /></a>
 <a href="mailto:soumiryasarangi@gmail.com"><img src="https://img.shields.io/badge/Email-0A3D62?style=for-the-badge&logo=gmail&logoColor=00D9FF" alt="Email" /></a>
-<a href="https://github.com/SoumiryaSarangi?tab=repositories"><img src="https://img.shields.io/badge/Repositories-0A3D62?style=for-the-badge&logo=github&logoColor=00D9FF" alt="Repos" /></a>
+<a href="https://github.com/SoumiryaSarangi?tab=repositories"><img src="https://img.shields.io/badge/Repositories-0A3D62?style=for-the-badge&logo=github&logoColor=00D9FF" alt="Repositories" /></a>
 <img src="https://img.shields.io/github/followers/SoumiryaSarangi?style=for-the-badge&logo=github&label=Followers&color=00D9FF&labelColor=0A3D62" alt="Followers" />
 <img src="https://komarev.com/ghpvc/?username=SoumiryaSarangi&style=for-the-badge&color=00D9FF&label=VIEWS" alt="Views" />
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
+<img src="assets/divider.svg" width="100%" alt="" />
 
 ## `01` &nbsp;·&nbsp; Overview
 
@@ -38,14 +31,13 @@
 name:      Soumirya Sarangi
 role:      AI/ML Engineer  ·  Full-Stack Developer
 education: B.Tech CSE @ Lovely Professional University  ·  CGPA 8.4
-based_in:  Phagwara, Punjab, India
 domain:    computer vision on satellite SAR imagery
 stack:     PyTorch · Python · Next.js · TypeScript
 ```
 
 I build machine learning systems end to end — the model, the evaluation harness that decides whether the model is any good, and the product surface that puts it in front of a user.
 
-Most of my recent work sits in remote sensing, where the imagery is single-channel, speckled, and nothing like the natural-image datasets standard architectures are tuned for. That constraint has shaped how I approach the rest of it: establish a classical baseline before reaching for a network, measure against a holdout that was sealed before training started, and treat the interface between pipeline stages as a contract rather than an assumption.
+Most of my recent work sits in remote sensing, where imagery is single-channel, speckled, and nothing like the natural-image datasets standard architectures are tuned for. That constraint shaped the rest of how I work: establish a classical baseline before reaching for a network, measure against a holdout sealed before training started, and treat the interface between pipeline stages as a contract rather than an assumption.
 
 The other half of my time goes into full-stack product work — Next.js applications with real auth, offline-capable storage, and deploys that stay up without supervision.
 
@@ -79,7 +71,7 @@ The other half of my time goes into full-stack product work — Next.js applicat
 </tr>
 </table>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
+<img src="assets/divider.svg" width="100%" alt="" />
 
 ## `02` &nbsp;·&nbsp; How I work
 
@@ -98,7 +90,7 @@ A classical method goes in first — thresholding, hand-built features, a linear
 
 **Evaluation before optimisation**
 
-Splits at the scene level, never the tile level, so that neighbouring crops cannot leak across the boundary. Thresholds chosen on validation and frozen. The holdout stays sealed until the run is finished.
+Splits at the scene level, never the tile level, so neighbouring crops cannot leak across the boundary. Thresholds chosen on validation and frozen. The holdout stays sealed until the run is finished.
 
 </td>
 <td width="33%" valign="top">
@@ -134,7 +126,7 @@ A result in a notebook is not a deliverable. I take projects through to a deploy
 </tr>
 </table>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
+<img src="assets/divider.svg" width="100%" alt="" />
 
 ## `03` &nbsp;·&nbsp; Selected work
 
@@ -142,7 +134,7 @@ A result in a notebook is not a deliverable. I take projects through to a deploy
 <tr>
 <td width="50%" valign="top">
 
-### 🛰️ &nbsp; UDGAM
+### <img src="assets/icons/satellite.svg" width="21" align="top" /> &nbsp;UDGAM
 
 <img src="https://img.shields.io/badge/SIH%202026-00D9FF?style=flat-square&labelColor=0D1117" />
 <img src="https://img.shields.io/badge/PyTorch-0A3D62?style=flat-square&logo=pytorch&logoColor=00D9FF&labelColor=0D1117" />
@@ -159,7 +151,7 @@ Detection stage of a three-part pipeline for maritime oil spill monitoring. Rath
 </td>
 <td width="50%" valign="top">
 
-### 🎓 &nbsp; SenseiAI
+### <img src="assets/icons/study.svg" width="21" align="top" /> &nbsp;SenseiAI
 
 <a href="https://exam-prep-ai-ebon.vercel.app"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
 <a href="https://github.com/SoumiryaSarangi/ExamPrep-AI"><img src="https://img.shields.io/badge/source-0A3D62?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117" /></a>
@@ -179,7 +171,7 @@ Local-first on IndexedDB: optional auth, demo mode with no key at all. Removing 
 <tr>
 <td width="50%" valign="top">
 
-### 🛡️ &nbsp; A.R.T.H.U.R.
+### <img src="assets/icons/shield.svg" width="21" align="top" /> &nbsp;A.R.T.H.U.R.
 
 <a href="https://github.com/SoumiryaSarangi/A.R.T.H.U.R.-Active-Response-Tether-Heuristic-User-Recognizer"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
 <img src="https://img.shields.io/badge/FastAPI-0A3D62?style=flat-square&logo=fastapi&logoColor=00D9FF&labelColor=0D1117" />
@@ -196,7 +188,7 @@ FastAPI backend streaming over WebSockets to a Next.js 14 front end, with a K-Me
 </td>
 <td width="50%" valign="top">
 
-### 🤖 &nbsp; ML Educational Chatbot
+### <img src="assets/icons/chatbot.svg" width="21" align="top" /> &nbsp;ML Educational Chatbot
 
 <a href="https://github.com/SoumiryaSarangi/ml-educational-chatbot"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
 <img src="https://img.shields.io/badge/no%20LLM-0A3D62?style=flat-square&labelColor=0D1117" />
@@ -216,7 +208,7 @@ Millisecond responses on CPU, zero cost per query, and every decision traceable 
 <tr>
 <td width="50%" valign="top">
 
-### 👕 &nbsp; Fashion-MNIST · HOG + SVM
+### <img src="assets/icons/grid.svg" width="21" align="top" /> &nbsp;Fashion-MNIST · HOG + SVM
 
 <a href="https://github.com/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
 <img src="https://img.shields.io/badge/89.2%25%20accuracy-0A3D62?style=flat-square&labelColor=0D1117" />
@@ -232,7 +224,7 @@ Modular scikit-learn pipeline — HOG descriptors into a linear SVM, each stage 
 </td>
 <td width="50%" valign="top">
 
-### 🥩 &nbsp; Meat Freshness Analyzer
+### <img src="assets/icons/scan.svg" width="21" align="top" /> &nbsp;Meat Freshness Analyzer
 
 <a href="https://marbl-app.onrender.com"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
 <a href="https://github.com/SoumiryaSarangi/Meat-freshness-analyzer"><img src="https://img.shields.io/badge/source-0A3D62?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117" /></a>
@@ -252,8 +244,7 @@ The deployment constraint drove the modelling: everything had to run fast enough
 
 <sub>Further work, including an <a href="https://github.com/SoumiryaSarangi/OS-CA-Automated-Deadlock-Detection-Tool">interactive OS deadlock detection tool</a> (matrix-based and Wait-For Graph, visualised step by step), is in the <a href="https://github.com/SoumiryaSarangi?tab=repositories">repositories tab</a>.</sub>
 
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
+<img src="assets/divider.svg" width="100%" alt="" />
 
 ## `04` &nbsp;·&nbsp; Toolkit
 
@@ -265,31 +256,32 @@ The deployment constraint drove the modelling: everything had to run fast enough
 
 <sub>**DEEP LEARNING & COMPUTER VISION**</sub>
 
-<img src="https://skillicons.dev/icons?i=pytorch,sklearn,opencv&theme=dark" alt="ML" />
+<img src="https://skillicons.dev/icons?i=pytorch,sklearn,opencv&theme=dark" alt="Machine learning" />
 
 <img src="https://img.shields.io/badge/rasterio-0A3D62?style=flat-square&labelColor=0D1117" />
 <img src="https://img.shields.io/badge/scikit--image-0A3D62?style=flat-square&labelColor=0D1117" />
 <img src="https://img.shields.io/badge/Shapely-0A3D62?style=flat-square&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/MediaPipe-0A3D62?style=flat-square&labelColor=0D1117" />
 <img src="https://img.shields.io/badge/NumPy-0A3D62?style=flat-square&logo=numpy&logoColor=00D9FF&labelColor=0D1117" />
 <img src="https://img.shields.io/badge/Google%20Earth%20Engine-0A3D62?style=flat-square&logo=googleearth&logoColor=00D9FF&labelColor=0D1117" />
 
 <sub>**WEB & FULL-STACK**</sub>
 
-<img src="https://skillicons.dev/icons?i=nextjs,react,nodejs,tailwind,html,css&theme=dark" alt="Web" />
+<img src="https://skillicons.dev/icons?i=nextjs,react,nodejs,fastapi,tailwind,html,css&theme=dark" alt="Web" />
 
 <sub>**DATA, INFRASTRUCTURE & TOOLING**</sub>
 
-<img src="https://skillicons.dev/icons?i=mysql,postgres,supabase,git,github,vercel,linux,vscode&theme=dark" alt="Tools" />
+<img src="https://skillicons.dev/icons?i=mysql,postgres,supabase,git,github,vercel,linux,vscode&theme=dark" alt="Tooling" />
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
+<img src="assets/divider.svg" width="100%" alt="" />
 
 ## `05` &nbsp;·&nbsp; Activity
 
 <div align="center">
 
-<img src="https://streak-stats.demolab.com?user=SoumiryaSarangi&hide_border=true&background=0D1117&stroke=1F6FEB&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF&sideLabels=C9D1D9&dates=8B949E&sideNums=C9D1D9&currStreakNum=FFFFFF" alt="Streak" />
+<img src="https://streak-stats.demolab.com?user=SoumiryaSarangi&hide_border=true&background=0D1117&stroke=1F6FEB&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF&sideLabels=C9D1D9&dates=8B949E&sideNums=C9D1D9&currStreakNum=FFFFFF" alt="Contribution streak" />
 
 <br /><br />
 
@@ -322,15 +314,11 @@ The deployment constraint drove the modelling: everything had to run fast enough
 <img height="165" src="https://YOUR-INSTANCE.vercel.app/api?username=SoumiryaSarangi&show_icons=true&include_all_commits=true&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=C9D1D9&icon_color=00D9FF&rank_icon=github" alt="Stats" />
 <img height="165" src="https://YOUR-INSTANCE.vercel.app/api/top-langs/?username=SoumiryaSarangi&layout=compact&langs_count=8&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=C9D1D9" alt="Top languages" />
 
-<br /><br />
-
-<img src="https://YOUR-GRAPH-INSTANCE.vercel.app/graph?username=SoumiryaSarangi&bg_color=0D1117&color=00D9FF&line=1F6FEB&point=FFFFFF&area=true&hide_border=true&custom_title=Contribution%20Activity" alt="Activity graph" />
-
 </div>
 
 -->
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
+<img src="assets/divider.svg" width="100%" alt="" />
 
 ## `06` &nbsp;·&nbsp; Contact
 
@@ -351,4 +339,4 @@ If you are working on something in geospatial AI — or you have a problem where
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00D9FF,55:0A3D62,100:0D1117&height=130&section=footer" width="100%" alt="" />
+<img src="assets/divider.svg" width="100%" alt="" />
