@@ -39,7 +39,7 @@ name:      Soumirya Sarangi
 role:      AI/ML Engineer  ·  Full-Stack Developer
 education: B.Tech CSE @ Lovely Professional University  ·  CGPA 8.4
 based_in:  Phagwara, Punjab, India
-focus:     LLM-powered product surfaces in Next.js
+domain:    computer vision on satellite SAR imagery
 stack:     PyTorch · Python · Next.js · TypeScript
 ```
 
@@ -138,75 +138,120 @@ A result in a notebook is not a deliverable. I take projects through to a deploy
 
 ## `03` &nbsp;·&nbsp; Selected work
 
-### 🛰️ &nbsp; UDGAM — Oil Spill Detection & Vessel Attribution from Sentinel-1 SAR
+<table>
+<tr>
+<td width="50%" valign="top">
 
-<img src="https://img.shields.io/badge/Smart%20India%20Hackathon%202026-00D9FF?style=flat-square&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/PyTorch%202.6-0A3D62?style=flat-square&logo=pytorch&logoColor=00D9FF&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/Python%203.13-0A3D62?style=flat-square&logo=python&logoColor=00D9FF&labelColor=0D1117" />
-<img src="https://img.shields.io/badge/private%20repository-0A3D62?style=flat-square&labelColor=0D1117" />
+### 🛰️ &nbsp; UDGAM
 
-> **Problem** — Synthetic aperture radar can see oil slicks through cloud and darkness, which makes it the only practical sensor for continuous maritime monitoring. It also renders wind shadows, biogenic slicks and low-wind zones as dark patches that look almost identical to oil. A segmenter trained on spill imagery will confidently outline all of them.
+<img src="https://img.shields.io/badge/SIH%202026-00D9FF?style=flat-square&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/PyTorch-0A3D62?style=flat-square&logo=pytorch&logoColor=00D9FF&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/private-0A3D62?style=flat-square&labelColor=0D1117" />
 
-> **Approach** — I own the detection stage of a three-stage pipeline (detect → backward drift to origin → vessel attribution). Rather than asking one network to both find and disambiguate, I built a gated two-network detector: a CNN scene classifier decides whether a scene plausibly contains oil at all, and only then does a U-Net segmenter run. Trained on a 2,570-scene corpus with per-scene MAD normalisation and scene-level splits.
+*SAR sees through cloud and darkness — but renders wind shadows and algal slicks almost identically to oil.*
 
-> **Result** — 0.942 scene-classification accuracy and 0.757 pooled oil-class IoU against a 0.689 classical baseline, measured on a 450-scene holdout sealed before training. The gate lifted look-alike rejection from 0.08 to 0.84 at equal IoU — the clearest evidence that the architectural decision, not the extra capacity, was doing the work. Against SkyTruth Cerulean on real incidents, median agreement was 0.553 IoU.
+Detection stage of a three-part pipeline for maritime oil spill monitoring. Rather than asking one network to find and disambiguate at once, I gated a U-Net segmenter behind a CNN scene classifier, trained on 2,570 Sentinel-1 scenes with per-scene normalisation and scene-level splits.
 
-<sub>Also built the classical CV path behind the live demo — dark-spot thresholding, a 10-feature RandomForest, and a land-masked ship-contact detector that cut false contacts from 142 to 110 — emitting schema-validated GeoJSON for the downstream stages.</sub>
+**0.942** scene accuracy · **0.757** pooled IoU on a sealed holdout · look-alike rejection **0.08 → 0.84**, which isolates the gain to the architecture rather than the added capacity.
 
-<sub>`PyTorch` · `CUDA 12.4` · `rasterio` · `OpenCV` · `scikit-image` · `Shapely` · `Google Earth Engine`</sub>
+<sub>`PyTorch` · `rasterio` · `OpenCV` · `scikit-image` · `Earth Engine`</sub>
 
-<br />
+</td>
+<td width="50%" valign="top">
 
-### 🎓 &nbsp; SenseiAI — AI Study Platform
+### 🎓 &nbsp; SenseiAI
 
 <a href="https://exam-prep-ai-ebon.vercel.app"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
 <a href="https://github.com/SoumiryaSarangi/ExamPrep-AI"><img src="https://img.shields.io/badge/source-0A3D62?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117" /></a>
-<img src="https://img.shields.io/github/stars/SoumiryaSarangi/ExamPrep-AI?style=flat-square&labelColor=0D1117&color=0A3D62" />
-<img src="https://img.shields.io/github/last-commit/SoumiryaSarangi/ExamPrep-AI?style=flat-square&labelColor=0D1117&color=0A3D62" />
+<img src="https://img.shields.io/github/last-commit/SoumiryaSarangi/ExamPrep-AI?style=flat-square&label=updated&labelColor=0D1117&color=0A3D62" />
 
-> **Problem** — Students receive lecture material as slides and get no structure on top of it. The tools that promise to fix this require an account, an API key, and permission to upload coursework to someone else's server — which is enough friction that most people give up before the first session.
+*Study tools demand an account and an API key before the first session — enough friction that most students never reach it.*
 
-> **Approach** — A Next.js 15 application that ingests PDF and PPTX slides and generates structured notes, flashcards, quizzes and timed exam simulations through LLaMA 3.3 70B on Groq. Flashcards run on SM-2 spaced repetition. A per-topic weak-area tracker reads quiz history and assembles the next practice set from the topics the user is actually failing. The architecture is local-first: all user data lives in IndexedDB via Dexie, Supabase auth is optional, and a demo mode works with no API key at all.
+Next.js 15 platform that turns lecture PDFs and slide decks into structured notes, flashcards, quizzes and timed exams via LLaMA 3.3 70B on Groq. SM-2 spaced repetition, plus a weak-area tracker that reads quiz history and assembles the next practice set from what the user is actually failing.
 
-> **Result** — A deployed, working product that needs no signup to try. The offline-first decision turned out to matter more than any model choice — it removed the entire onboarding barrier and made the tool usable on unreliable campus networks.
+Local-first on IndexedDB: optional auth, demo mode with no key at all. Removing onboarding mattered more than any model choice.
 
-<sub>`Next.js 15 (App Router)` · `TypeScript` · `Radix UI / shadcn` · `Zustand` · `Dexie` · `PDF.js` · `Supabase`</sub>
+<sub>`Next.js 15` · `TypeScript` · `Zustand` · `Dexie` · `Supabase`</sub>
 
-<br />
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 🛡️ &nbsp; A.R.T.H.U.R.
+
+<a href="https://github.com/SoumiryaSarangi/A.R.T.H.U.R.-Active-Response-Tether-Heuristic-User-Recognizer"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
+<img src="https://img.shields.io/badge/FastAPI-0A3D62?style=flat-square&logo=fastapi&logoColor=00D9FF&labelColor=0D1117" />
+<img src="https://img.shields.io/badge/real--time%20CV-0A3D62?style=flat-square&labelColor=0D1117" />
+
+*Screen locks are binary and badly timed: they fire while you are still sitting there, and stay open after you walk away.*
+
+Physical zero-trust workstation guard. BlazeFace/SSD detection through MediaPipe establishes presence, Bluetooth proximity tethering confirms it, and a three-state machine escalates between them instead of flipping a single boolean.
+
+FastAPI backend streaming over WebSockets to a Next.js 14 front end, with a K-Means "Chameleon UI" that recolours itself from the live camera frame.
+
+<sub>`Python` · `FastAPI` · `MediaPipe` · `WebSockets` · `Next.js 14`</sub>
+
+</td>
+<td width="50%" valign="top">
 
 ### 🤖 &nbsp; ML Educational Chatbot
 
 <a href="https://github.com/SoumiryaSarangi/ml-educational-chatbot"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
-<img src="https://img.shields.io/github/stars/SoumiryaSarangi/ml-educational-chatbot?style=flat-square&labelColor=0D1117&color=0A3D62" />
-<img src="https://img.shields.io/github/languages/top/SoumiryaSarangi/ml-educational-chatbot?style=flat-square&labelColor=0D1117&color=0A3D62" />
+<img src="https://img.shields.io/badge/no%20LLM-0A3D62?style=flat-square&labelColor=0D1117" />
+<img src="https://img.shields.io/github/last-commit/SoumiryaSarangi/ml-educational-chatbot?style=flat-square&label=updated&labelColor=0D1117&color=0A3D62" />
 
-> **Problem** — Conversational Q&A has become synonymous with calling a large language model, which makes it easy to forget where the genuine difficulty lies. For a narrow, well-bounded domain, it is not obvious that an LLM is required at all — but almost nobody checks.
+*Conversational Q&A has become synonymous with calling an LLM. For a narrow domain it may not be necessary — but almost nobody checks.*
 
-> **Approach** — A domain-restricted assistant for AI, ML and data science questions, built with no LLM anywhere in the stack. TF-IDF vectorisation feeds a Naive Bayes intent classifier; responses are retrieved by cosine similarity over a curated knowledge base; the interface runs on Dash.
+A domain-restricted assistant for AI, ML and data science questions, built with no language model anywhere in the stack. TF-IDF vectorisation into a Naive Bayes intent classifier, responses retrieved by cosine similarity over a curated knowledge base, served through Dash.
 
-> **Result** — Within its domain the system answers reliably, responds in milliseconds, runs on CPU, costs nothing per query, and every decision it makes can be traced to a specific feature weight. It also fails cleanly and visibly outside its domain, which is arguably a feature. A useful calibration of what the classical toolbox still covers.
+Millisecond responses on CPU, zero cost per query, and every decision traceable to a feature weight. It also fails visibly outside its domain — arguably a feature.
 
 <sub>`Python` · `scikit-learn` · `Dash` · `NumPy`</sub>
 
-<br />
+</td>
+</tr>
 
-### 👕 &nbsp; Fashion-MNIST Classifier — HOG + Linear SVM
+<tr>
+<td width="50%" valign="top">
+
+### 👕 &nbsp; Fashion-MNIST · HOG + SVM
 
 <a href="https://github.com/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
-<img src="https://img.shields.io/github/stars/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm?style=flat-square&labelColor=0D1117&color=0A3D62" />
-<img src="https://img.shields.io/github/languages/top/SoumiryaSarangi/Image-Classifier-for-fashion-mnist-hog-svm?style=flat-square&labelColor=0D1117&color=0A3D62" />
+<img src="https://img.shields.io/badge/89.2%25%20accuracy-0A3D62?style=flat-square&labelColor=0D1117" />
 
-> **Problem** — Fashion-MNIST is usually approached as a CNN exercise. The more instructive question is how much of the accuracy comes from learned features versus from the classifier on top of them — and how good a well-chosen hand-built descriptor still is.
+*Usually treated as a CNN exercise. The more useful question is how far a well-chosen hand-built descriptor still gets you.*
 
-> **Approach** — A modular scikit-learn pipeline: HOG descriptors into a linear SVM, with each stage independently swappable. Feature extraction and fitted models are cached to disk, so re-running an experiment costs seconds rather than minutes. Evaluation produces per-class precision, recall and a full confusion matrix rather than a single accuracy figure.
+Modular scikit-learn pipeline — HOG descriptors into a linear SVM, each stage independently swappable, with features and fitted models cached to disk so re-running an experiment costs seconds.
 
-> **Result** — 89.2% test accuracy with no neural network and no GPU. The per-class breakdown localises nearly all remaining error to the shirt/coat/pullover cluster, which is exactly where texture-based descriptors would be expected to struggle — a result that explains itself instead of requiring interpretation.
+**89.2%** test accuracy, no network and no GPU. Per-class evaluation localises nearly all residual error to the shirt/coat/pullover cluster, exactly where texture descriptors are expected to struggle — a result that explains itself.
 
-<sub>`Python` · `scikit-learn` · `scikit-image` · `NumPy` · `Matplotlib`</sub>
+<sub>`Python` · `scikit-learn` · `scikit-image` · `Matplotlib`</sub>
 
-<br />
+</td>
+<td width="50%" valign="top">
 
-<sub>Further work — including a mobile-first [meat freshness analyser](https://github.com/SoumiryaSarangi/Meat-freshness-analyzer) and an [interactive OS deadlock detection tool](https://github.com/SoumiryaSarangi/OS-CA-Automated-Deadlock-Detection-Tool) — is in the <a href="https://github.com/SoumiryaSarangi?tab=repositories">repositories tab</a>.</sub>
+### 🥩 &nbsp; Meat Freshness Analyzer
+
+<a href="https://marbl-app.onrender.com"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
+<a href="https://github.com/SoumiryaSarangi/Meat-freshness-analyzer"><img src="https://img.shields.io/badge/source-0A3D62?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117" /></a>
+<img src="https://img.shields.io/github/last-commit/SoumiryaSarangi/Meat-freshness-analyzer?style=flat-square&label=updated&labelColor=0D1117&color=0A3D62" />
+
+*Freshness assessment at point of sale is done by eye, inconsistently, by people with no time to be careful.*
+
+Camera-based classifier that grades a cut of meat for freshness and routes it by physical size, delivered as a mobile-first web app because the people who would use it are standing at a counter, not a desk.
+
+The deployment constraint drove the modelling: everything had to run fast enough on a phone browser to be worth pulling out, which ruled out the heavier architectures early.
+
+<sub>`Python` · `OpenCV` · `scikit-learn` · `Flask`</sub>
+
+</td>
+</tr>
+</table>
+
+<sub>Further work, including an <a href="https://github.com/SoumiryaSarangi/OS-CA-Automated-Deadlock-Detection-Tool">interactive OS deadlock detection tool</a> (matrix-based and Wait-For Graph, visualised step by step), is in the <a href="https://github.com/SoumiryaSarangi?tab=repositories">repositories tab</a>.</sub>
+
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0D1117,50:00D9FF,100:0D1117&height=3" width="100%" alt="" />
 
