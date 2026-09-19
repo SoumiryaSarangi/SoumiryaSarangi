@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Security system">
+  <path d="M24 6 L39 12 v12 c0 10 -7 15 -15 18 c-8 -3 -15 -8 -15 -18 V12 Z"/>
+  <circle cx="24" cy="21" r="4.5"/>
+  <path d="M16.5 33 a8 8 0 0 1 15 0" opacity="0.8"/>
+</svg>
