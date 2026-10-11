@@ -27,7 +27,11 @@ building:  a vertical search engine, a flash-sale ticketing system, a multi-regi
 looking:   SDE and AI/ML internships
 ```
 
-I build backend systems and then measure them: load tests on the real deployment, failure drills, and models scored on data they never trained on. Every number below names the split or the setup it came from.
+I'm a third-year CSE student at Lovely Professional University (CGPA 8.4). I care most about what software does after the demo works: under load, when a machine dies, and on data it never saw.
+
+The project I'd start with is CodeArena, an online judge I built solo and load-tested on its real Azure deployment. My ML work (UDGAM for Smart India Hackathon 2026, TruthLens, Marbl) follows the same habit: set the threshold on validation, open the holdout once, and report the split next to the number.
+
+Currently building: a vertical search engine, a flash-sale ticketing system and a multi-region uptime monitor (repos not public yet).
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
