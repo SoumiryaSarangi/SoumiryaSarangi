@@ -41,7 +41,7 @@ Currently building: a vertical search engine, a flash-sale ticketing system and 
 <tr>
 <td width="50%" valign="top">
 
-### <img src="assets/icons/judge.svg" width="21" align="top" /> &nbsp;CodeArena
+### <img src="assets/icons/judge.svg" width="28" align="top" /> &nbsp;CodeArena
 
 <a href="https://code-arena-eta-mauve.vercel.app"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
 <a href="https://github.com/SoumiryaSarangi/CodeArena"><img src="https://img.shields.io/badge/source-0A3D62?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117" /></a>
@@ -58,7 +58,7 @@ Online judge and contest platform. Code runs in isolate sandboxes on separate Az
 </td>
 <td width="50%" valign="top">
 
-### <img src="assets/icons/satellite.svg" width="21" align="top" /> &nbsp;UDGAM
+### <img src="assets/icons/satellite.svg" width="28" align="top" /> &nbsp;UDGAM
 
 <a href="https://github.com/SoumiryaSarangi/Udgam"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
 <img src="https://img.shields.io/badge/SIH%202026-0A3D62?style=flat-square&labelColor=0D1117" />
@@ -78,7 +78,7 @@ Traces an oil spill in Sentinel-1 radar back to the ship that caused it. I built
 <tr>
 <td width="50%" valign="top">
 
-### <img src="assets/icons/verify.svg" width="21" align="top" /> &nbsp;TruthLens
+### <img src="assets/icons/verify.svg" width="28" align="top" /> &nbsp;TruthLens
 
 <a href="https://github.com/SoumiryaSarangi/TruthLens"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
 <img src="https://img.shields.io/badge/EN%20%C2%B7%20HI%20%C2%B7%20PA-0A3D62?style=flat-square&labelColor=0D1117" />
@@ -94,7 +94,7 @@ Test ECE **0.039** · live verdict rule passed on **350** fresh claims, **100 of
 </td>
 <td width="50%" valign="top">
 
-### <img src="assets/icons/storage.svg" width="21" align="top" /> &nbsp;Vault
+### <img src="assets/icons/storage.svg" width="28" align="top" /> &nbsp;Vault
 
 <a href="https://github.com/SoumiryaSarangi/Vault"><img src="https://img.shields.io/badge/source-00D9FF?style=flat-square&logo=github&logoColor=0D1117&labelColor=0D1117" /></a>
 <img src="https://img.shields.io/badge/20--hour%20hackathon-0A3D62?style=flat-square&labelColor=0D1117" />
@@ -113,7 +113,7 @@ Close a laptop's lid and Vault declares it failed in **8 s** (demo mode), then r
 <tr>
 <td width="50%" valign="top">
 
-### <img src="assets/icons/scan.svg" width="21" align="top" /> &nbsp;Marbl
+### <img src="assets/icons/scan.svg" width="28" align="top" /> &nbsp;Marbl
 
 <a href="https://marbl-app.onrender.com"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
 <a href="https://github.com/SoumiryaSarangi/Meat-freshness-analyzer"><img src="https://img.shields.io/badge/source-0A3D62?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117" /></a>
@@ -129,7 +129,7 @@ Grades a cut of meat from a phone photo and routes it by physical size, measured
 </td>
 <td width="50%" valign="top">
 
-### <img src="assets/icons/study.svg" width="21" align="top" /> &nbsp;SenseiAI
+### <img src="assets/icons/study.svg" width="28" align="top" /> &nbsp;SenseiAI
 
 <a href="https://exam-prep-ai-ebon.vercel.app"><img src="https://img.shields.io/badge/live%20demo-00D9FF?style=flat-square&labelColor=0D1117" /></a>
 <a href="https://github.com/SoumiryaSarangi/ExamPrep-AI"><img src="https://img.shields.io/badge/source-0A3D62?style=flat-square&logo=github&logoColor=00D9FF&labelColor=0D1117" /></a>

@@ -1,7 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Online judge">
-  <rect x="6" y="9" width="36" height="30" rx="3"/>
-  <path d="M6 16 H42" opacity="0.8"/>
-  <path d="M13 24 l5 4 -5 4"/>
-  <path d="M22 32 h7"/>
-  <path d="M31 25 l3 3 6 -7" opacity="0.9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Online judge">
+  <defs>
+    <filter id="glow-j" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- badge background -->
+  <rect x="2" y="2" width="44" height="44" rx="10" fill="#0A3D62" opacity="0.85"/>
+  <rect x="2" y="2" width="44" height="44" rx="10" fill="none" stroke="#00D9FF" stroke-width="1.2" opacity="0.5"/>
+  <!-- terminal window -->
+  <rect x="9" y="11" width="30" height="26" rx="3" fill="none" stroke="#00D9FF" stroke-width="1.8" filter="url(#glow-j)"/>
+  <line x1="9" y1="17" x2="39" y2="17" stroke="#00D9FF" stroke-width="1.4" opacity="0.7"/>
+  <!-- prompt arrow -->
+  <polyline points="13,23 17,26 13,29" fill="none" stroke="#00D9FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow-j)"/>
+  <!-- cursor line -->
+  <line x1="20" y1="29" x2="28" y2="29" stroke="#00D9FF" stroke-width="1.8" stroke-linecap="round" filter="url(#glow-j)"/>
+  <!-- tick -->
+  <polyline points="28,22 31,25 37,18" fill="none" stroke="#00D9FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow-j)"/>
 </svg>

@@ -1,6 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Study platform">
-  <path d="M8 14 L24 8 L40 14 L24 20 Z"/>
-  <path d="M14 17 L14 28 a12 6 0 0 0 20 0 L34 17"/>
-  <path d="M40 14 L40 25"/>
-  <circle cx="40" cy="27.5" r="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Study / AI tutor platform">
+  <defs>
+    <filter id="glow-ed" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="10" fill="#0A3D62" opacity="0.85"/>
+  <rect x="2" y="2" width="44" height="44" rx="10" fill="none" stroke="#00D9FF" stroke-width="1.2" opacity="0.5"/>
+  <!-- mortarboard hat -->
+  <polygon points="24,9 40,16 24,23 8,16" fill="none" stroke="#00D9FF" stroke-width="1.7" stroke-linejoin="round" filter="url(#glow-ed)"/>
+  <!-- grad arc / diploma roll -->
+  <path d="M14 19 v10 a11 5 0 0 0 20 0 V19" fill="none" stroke="#00D9FF" stroke-width="1.7" stroke-linecap="round" filter="url(#glow-ed)"/>
+  <!-- tassel string -->
+  <line x1="40" y1="16" x2="40" y2="26" stroke="#00D9FF" stroke-width="1.6" stroke-linecap="round" filter="url(#glow-ed)"/>
+  <circle cx="40" cy="28" r="2" fill="#00D9FF" filter="url(#glow-ed)"/>
 </svg>
