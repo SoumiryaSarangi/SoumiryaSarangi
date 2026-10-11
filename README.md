@@ -215,7 +215,7 @@ A result in a notebook is not a deliverable. I take projects through to somethin
 
 <img src="https://streak-stats.demolab.com?user=SoumiryaSarangi&hide_border=true&background=0D1117&stroke=1F6FEB&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF&sideLabels=C9D1D9&dates=8B949E&sideNums=C9D1D9&currStreakNum=FFFFFF" alt="Contribution streak" />
 
-<br /><br />
+<br />
 
 <img src="assets/footer-pulse.svg" width="100%" alt="Animated failure drill: a storage node goes silent, is declared failed after 8 seconds, and Reed-Solomon rebuilds its shard on a surviving node" />
 
