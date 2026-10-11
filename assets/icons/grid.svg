@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Feature grid classifier">
+  <rect x="7" y="7" width="10" height="10" rx="1.5"/>
+  <rect x="19" y="7" width="10" height="10" rx="1.5" opacity="0.5"/>
+  <rect x="31" y="7" width="10" height="10" rx="1.5"/>
+  <rect x="7" y="19" width="10" height="10" rx="1.5" opacity="0.5"/>
+  <rect x="19" y="19" width="10" height="10" rx="1.5"/>
+  <rect x="31" y="19" width="10" height="10" rx="1.5" opacity="0.5"/>
+  <path d="M8 36 L18 36 M22 36 L40 36" opacity="0.7"/>
+  <path d="M8 41 L14 41 M18 41 L40 41" opacity="0.4"/>
+</svg>

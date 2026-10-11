@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Satellite">
+  <rect x="19" y="19" width="10" height="10" rx="1.5"/>
+  <path d="M19 22 L9 22 L9 26 L19 26"/>
+  <path d="M29 22 L39 22 L39 26 L29 26"/>
+  <path d="M24 19 L24 12"/>
+  <circle cx="24" cy="10" r="2.2"/>
+  <path d="M30 36 a9 9 0 0 0 -9 -9" opacity="0.75"/>
+  <path d="M36 40 a15 15 0 0 0 -15 -15" opacity="0.45"/>
+</svg>
