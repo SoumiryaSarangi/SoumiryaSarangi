@@ -217,7 +217,7 @@ A result in a notebook is not a deliverable. I take projects through to somethin
 
 <br /><br />
 
-<img src="assets/footer-aurora.svg" width="100%" alt="Animated failure drill: a storage node goes silent, is declared failed after 8 seconds, and Reed-Solomon rebuilds its shard on a surviving node" />
+<img src="assets/footer-pulse.svg" width="100%" alt="Animated failure drill: a storage node goes silent, is declared failed after 8 seconds, and Reed-Solomon rebuilds its shard on a surviving node" />
 
 </div>
 
