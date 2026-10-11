@@ -4,7 +4,7 @@
   Palette: bg #0D1117 · accent #00D9FF · deep #0A3D62 · text #C9D1D9
 -->
 
-<img src="assets/header.svg" width="100%" alt="Soumirya Sarangi, backend and distributed systems with applied ML" />
+<img src="assets/header-new.svg" width="100%" alt="Soumirya Sarangi, backend and distributed systems with applied ML" />
 
 <div align="center">
 
