@@ -1,23 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Camera scan / meat analysis">
-  <defs>
-    <filter id="glow-sc" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <rect x="2" y="2" width="44" height="44" rx="10" fill="#0A3D62" opacity="0.85"/>
-  <rect x="2" y="2" width="44" height="44" rx="10" fill="none" stroke="#00D9FF" stroke-width="1.2" opacity="0.5"/>
-  <!-- corner brackets -->
-  <path d="M8 17 v-5 a2 2 0 0 1 2-2 h5"  fill="none" stroke="#00D9FF" stroke-width="1.8" stroke-linecap="round" filter="url(#glow-sc)"/>
-  <path d="M40 17 v-5 a2 2 0 0 0-2-2 h-5" fill="none" stroke="#00D9FF" stroke-width="1.8" stroke-linecap="round" filter="url(#glow-sc)"/>
-  <path d="M8 31 v5 a2 2 0 0 0 2 2 h5"   fill="none" stroke="#00D9FF" stroke-width="1.8" stroke-linecap="round" filter="url(#glow-sc)"/>
-  <path d="M40 31 v5 a2 2 0 0 1-2 2 h-5"  fill="none" stroke="#00D9FF" stroke-width="1.8" stroke-linecap="round" filter="url(#glow-sc)"/>
-  <!-- subject circle -->
-  <circle cx="24" cy="24" r="7" fill="none" stroke="#00D9FF" stroke-width="1.7" filter="url(#glow-sc)"/>
-  <!-- animated scan line -->
-  <line x1="11" y1="24" x2="37" y2="24" stroke="#00D9FF" stroke-width="1.5" stroke-linecap="round" filter="url(#glow-sc)">
-    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.2s" repeatCount="indefinite"/>
-    <animate attributeName="y1" values="17;31;17" dur="2.2s" repeatCount="indefinite"/>
-    <animate attributeName="y2" values="17;31;17" dur="2.2s" repeatCount="indefinite"/>
-  </line>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Camera scan">
+  <path d="M7 16 v-5 a2 2 0 0 1 2 -2 h5"/>
+  <path d="M41 16 v-5 a2 2 0 0 0 -2 -2 h-5"/>
+  <path d="M7 32 v5 a2 2 0 0 0 2 2 h5"/>
+  <path d="M41 32 v5 a2 2 0 0 1 -2 2 h-5"/>
+  <circle cx="24" cy="24" r="7"/>
+  <path d="M10 24 h28" opacity="0.85">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="2.4s" repeatCount="indefinite"/>
+  </path>
 </svg>

@@ -1,21 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Distributed storage">
-  <defs>
-    <filter id="glow-st" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <rect x="2" y="2" width="44" height="44" rx="10" fill="#0A3D62" opacity="0.85"/>
-  <rect x="2" y="2" width="44" height="44" rx="10" fill="none" stroke="#00D9FF" stroke-width="1.2" opacity="0.5"/>
-  <!-- three storage nodes -->
-  <rect x="5"  y="7"  width="13" height="9" rx="2" fill="none" stroke="#00D9FF" stroke-width="1.7" filter="url(#glow-st)"/>
-  <rect x="27" y="7"  width="13" height="9" rx="2" fill="none" stroke="#00D9FF" stroke-width="1.7" filter="url(#glow-st)"/>
-  <rect x="16" y="29" width="13" height="9" rx="2" fill="none" stroke="#00D9FF" stroke-width="1.7" filter="url(#glow-st)"/>
-  <!-- connecting lines -->
-  <path d="M11.5 16 v5 h22 v-5" fill="none" stroke="#00D9FF" stroke-width="1.4" stroke-linecap="round" opacity="0.75" filter="url(#glow-st)"/>
-  <line x1="22.5" y1="21" x2="22.5" y2="29" stroke="#00D9FF" stroke-width="1.4" stroke-linecap="round" opacity="0.75" filter="url(#glow-st)"/>
-  <!-- node status dots -->
-  <circle cx="10"  cy="11.5" r="1.5" fill="#00D9FF" filter="url(#glow-st)"/>
-  <circle cx="33"  cy="11.5" r="1.5" fill="#00D9FF" filter="url(#glow-st)"/>
-  <circle cx="22.5" cy="33.5" r="1.5" fill="#00D9FF" filter="url(#glow-st)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#00D9FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Distributed storage">
+  <rect x="6" y="8" width="15" height="11" rx="2"/>
+  <rect x="27" y="8" width="15" height="11" rx="2"/>
+  <rect x="16.5" y="29" width="15" height="11" rx="2"/>
+  <path d="M13.5 19 v5 h21 v-5" opacity="0.8"/>
+  <path d="M24 24 v5"/>
+  <circle cx="11" cy="13.5" r="1" fill="#00D9FF"/>
+  <circle cx="32" cy="13.5" r="1" fill="#00D9FF"/>
+  <circle cx="21.5" cy="34.5" r="1" fill="#00D9FF"/>
 </svg>
