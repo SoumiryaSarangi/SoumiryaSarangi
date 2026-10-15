@@ -231,7 +231,7 @@ A result in a notebook is not a deliverable. I take projects through to somethin
 
 <div align="center">
 
-**Open to SDE and AI/ML internships.**
+**Open to opportunities.**
 
 <br />
 
